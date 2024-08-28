@@ -1,18 +1,30 @@
-def query_project_summary(synapse_id=2580853):
+def query_entity_distribution(synapse_id=20446927):
     """Returns the number of files for a given project (synapse_id)."""
 
     return f"""
+    with htan_projects as (
+        // select distinct cast(replace(NF.projectid, 'syn', '') as INTEGER) as project_id from sage.portal_raw.HTAN
+        select
+            cast(scopes.value as integer) as project_id
+        from
+            synapse_data_warehouse.synapse.node_latest,
+            lateral flatten(input => node_latest.scope_ids) scopes
+        where
+            id = {synapse_id}
+    )
     SELECT
-        COUNT(DISTINCT(FILE_LATEST.ID)) AS TOTAL_FILES,
-        ROUND(SUM(FILE_LATEST.CONTENT_SIZE) / POWER(2, 40), 2) AS TOTAL_SIZE_IN_TB,
-        ROUND(SUM(FILE_LATEST.CONTENT_SIZE) / POWER(2, 30) * 0.023 * 12, 2) AS STORAGE_COST_PER_YEAR
+        node_type,
+        count(*) as number_of_files,
+        count(*) * 100.0 / SUM(COUNT(*)) OVER () AS percentage_of_total
     FROM
-        SYNAPSE_DATA_WAREHOUSE.FILE_LATEST
-    JOIN
         SYNAPSE_DATA_WAREHOUSE.SYNAPSE.NODE_LATEST
-        ON FILE_LATEST.ID = NODE_LATEST.FILE_HANDLE_ID
-    WHERE
-        NODE_LATEST.PROJECT_ID = {synapse_id}
+    JOIN
+        htan_projects
+        on NODE_LATEST.project_id = htan_projects.project_id
+    group by
+        node_type
+    order by
+        number_of_files DESC;
     """
 
 def query_project_sizes():
