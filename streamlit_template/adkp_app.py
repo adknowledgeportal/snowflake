@@ -33,7 +33,7 @@ def main():
     # 3. Format the app, and visualize the data with your widgets in widgets.py
     # -------------------------------------------------------------------------
     # Row 1 -------------------------------------------------------------------
-    st.markdown("## AD Knowledge Portal Data Usage Report :brain: :bar_chart:")
+    st.markdown("## AD Knowledge Portal Data Usage Report :brain: :bar_chart: - INTERNAL SAGE USE ONLY")
     st.markdown("### Portal Summary")
     col1, col2, col3 = st.columns([1, 1, 5])
     col1.metric("Total Number of Files", f"{total_files}")
