@@ -28,25 +28,23 @@ DEFAULT_TIMEOUT = 30
 @pytest.fixture(scope="module")
 def app():
     return AppTest.from_file(
-        "app.py", default_timeout=DEFAULT_TIMEOUT
+        "adkp_app.py", default_timeout=DEFAULT_TIMEOUT
     ).run()
 
 
 def test_monthly_overview(app):
     """
-    Ensure that the Monthly Overview section is being displayed
+    Ensure that the Portal Summary section is being displayed
     with the appropriate labels in the right order.
     """
 
     # Access the Monthly Overview columns in Row 1
-    total_storage_occupied = app.columns[0].children[0]
-    avg_project_size = app.columns[1].children[0]
-    annual_cost = app.columns[2].children[0]
+    total_files = app.columns[0].children[0]
+    total_data_volume = app.columns[1].children[0]
 
     # Check that the labels are correct for each metric
-    assert total_storage_occupied.label == "Total Storage Occupied"
-    assert avg_project_size.label == "Avg. Project Size"
-    assert annual_cost.label == "Annual Cost"
+    assert total_files.label == "Total Number of Files"
+    assert total_data_volume.label == "Total Data Volume"
 
 
 def test_plotly_charts(app):
@@ -55,7 +53,7 @@ def test_plotly_charts(app):
     plotly_charts = app.get("plotly_chart")
 
     assert plotly_charts is not None
-    assert len(plotly_charts) == 2
+    assert len(plotly_charts) == 1
 
 
 def test_dataframe(app):
