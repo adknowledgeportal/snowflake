@@ -4,12 +4,17 @@ GRANT ROLE ACCOUNTADMIN
 TO USER "x.schildwachter@sagebase.org";
 GRANT ROLE ACCOUNTADMIN
 TO USER "khai.do@sagebase.org";
+GRANT ROLE ACCOUNTADMIN
+TO USER "phil.snyder@sagebase.org";
 
 -- SYSADMIN privileges
 GRANT ROLE SYSADMIN
 TO USER "kevin.boske@sagebase.org";
 GRANT ROLE SYSADMIN
 TO USER "x.schildwachter@sagebase.org";
+GRANT ROLE SYSADMIN
+TO USER "phil.snyder@sagebase.org";
+
 GRANT ROLE SYSADMIN
 TO USER DPE_SERVICE;
 -- warehouse usage privileges
@@ -35,6 +40,8 @@ GRANT ROLE GENIE_ADMIN
 TO USER "xindi.guo@sagebase.org";
 GRANT ROLE GENIE_ADMIN
 TO USER "chelsea.nayan@sagebase.org";
+GRANT ROLE GENIE_ADMIN
+TO USER "rixing.xu@sagebase.org";
 
 -- RECOVER privileges
 GRANT ROLE RECOVER_DATA_ENGINEER
@@ -96,7 +103,6 @@ GRANT ROLE DATA_ANALYTICS TO USER "natosha.edmonds@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "kevin.boske@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "brad.macdonald@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "robert.allaway@sagebase.org";
-GRANT ROLE DATA_ANALYTICS TO USER "nicholas.lee@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "victor.baham@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "meghasyam@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "pranav.anbarasu@sagebase.org";
@@ -123,7 +129,6 @@ GRANT ROLE DATA_ANALYTICS TO USER "drew.duglan@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "zoe.leanza@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "anna.greenwood@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "jay.hodgson@sagebase.org";
-GRANT ROLE DATA_ANALYTICS TO USER "james.eddy@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "milan.vu@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "richard.yaxley@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "ashley.clayton@sagebase.org";
@@ -136,7 +141,6 @@ GRANT ROLE DATA_ANALYTICS TO USER "sonia.carlson@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "anthony.williams@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "loren.wolfe@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "lingling.peng@sagebase.org";
-GRANT ROLE DATA_ANALYTICS TO USER "mialy.defelice@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "gianna.jordan@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "mieko.hashimoto@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "andrew.lamb@sagebase.org";
@@ -154,6 +158,7 @@ GRANT ROLE DATA_ANALYTICS TO USER "jessica.vera@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "kimberly.corrigan@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "mackenzie.wildman@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER "aditi.gopalan@sagebase.org";
+GRANT ROLE DATA_ANALYTICS TO USER "angie.bowen@sagebase.org";
 GRANT ROLE DATA_ANALYTICS TO USER AD_SERVICE;
 
 // Leaders
@@ -173,7 +178,6 @@ GRANT ROLE DATA_ANALYTICS TO ROLE SAGE_LEADERS;
 GRANT ROLE FAIR TO USER "anthony.williams@sagebase.org";
 GRANT ROLE FAIR TO USER "loren.wolfe@sagebase.org";
 GRANT ROLE FAIR TO USER "lingling.peng@sagebase.org";
-GRANT ROLE FAIR TO USER "mialy.defelice@sagebase.org";
 GRANT ROLE FAIR TO USER "gianna.jordan@sagebase.org";
 GRANT ROLE FAIR TO USER "mieko.hashimoto@sagebase.org";
 GRANT ROLE FAIR TO USER "andrew.lamb@sagebase.org";
